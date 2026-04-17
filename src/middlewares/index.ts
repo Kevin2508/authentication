@@ -1,3 +1,4 @@
 import { checkDuplicateSignUp } from "./verifySignUp";
-
-export { checkDuplicateSignUp };
+import { verifyToken } from "./authJWT";
+import { isAdmin } from "./authJWT";
+export { checkDuplicateSignUp, verifyToken, isAdmin };

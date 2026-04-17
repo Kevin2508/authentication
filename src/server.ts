@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use("/api/auth", authRoutes)
-app.use('/api/test', userRoutes);
+app.use("/api/test", userRoutes);
 
 app.get('/',(req : Request,res : Response)=>{
     res.send('Hello')
