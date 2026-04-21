@@ -10,6 +10,7 @@ interface AuthenticatedRequest extends Request{
     id?:number;
     user?:User;
 }
+
 export const verifyToken = async(req:AuthenticatedRequest, res:Response, next:NextFunction)=>{
     let token = req.headers["authorization"];
     if(!token || typeof token !== "string"){

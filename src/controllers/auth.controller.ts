@@ -4,10 +4,12 @@ import bcrypt from 'bcryptjs';
 import { RoleRow, User } from "../types";
 import db from "../config/db.config";
 import jwt from "jsonwebtoken";
+import svgCaptcha from 'svg-captcha';
 export const signup = async (req:Request, res:Response)=>{
     
     try {
         const {userName, email, password} = req.body;
+        console.log(req.body);  
         const hashedPassword = await bcrypt.hash(password, 8);
         const roleName = 'user';
         console.log(hashedPassword);
@@ -54,3 +56,4 @@ export const signin = async(req:Request, res:Response)=>{
         console.error(error)
     }                                                                                                                                                                                                                                
 }
+
